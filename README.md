@@ -93,29 +93,29 @@ Initialized SDK includes five blocks of functions to operate with specific entit
 - GetAMovie
 - GetAQuote
 
-> Note: **query** is always an optional parameter, you don't need to provide by default the page is set to 1, limit to 10 and offset to 0.
-
-> Note: **filter** is always an optional parameter, it is used to filter by field. Always pass filter as the second argument
+> Note: **query** is always an optional parameter, you don't need to provide the values.
 
 ```javascript
-const query = { limit: 20, page: 2 }
-const filter = { name: 'Gandalf' }
-sdk.GetAllBook(query, filter).then((result) => console.log(result))
+const filter = { name: '=Gandalf' }
+const query = { limit: 20, page: 2, filter }
+sdk.GetAllBook(query).then((result) => console.log(result))
 ```
 
 ### Query object
 
 **query** is an optional item and might consist following properties:
 
-- **limit**: number;
-- **offset**: number;
-- **page**: number;
+- **limit?**: number;
+- **offset?**: number;
+- **page?**: number;
+- **filter?**: Record<string string>
 
 **Filtering example:**
 
 ```javascript
-const filter = { name: 'Gandalf' }
-sdk.ListMovies(null, filter).then((result) => console.log(result))
+const filter = { name: '=Gandalf' }
+const query = { filter }
+sdk.ListMovies(query).then((result) => console.log(result))
 ```
 
 ### Error handling

@@ -12,3 +12,7 @@ export interface Doc {
   chapterName: string
   book: string
 }
+
+export interface IChapter {
+  GetAChapter(id: string): Promise<Response>
+}

@@ -1,3 +1,7 @@
+import { ICharacter } from '../characters/types'
+import { IChapter } from '../chapters/types'
+import { IMovie } from '../movies/types'
+
 export declare type Response = {
   total: number
   docs: Doc[]
@@ -9,21 +13,14 @@ export declare type Doc = {
 }
 
 export declare type Query = {
-  limit: number
-  offset: number
-  page: number
+  limit?: number
+  offset?: number
+  page?: number
+  filter?: Record<string, string>
 }
 
-export interface ILordOfRings {
+export interface ILordOfRings extends ICharacter, IChapter, IMovie {
   GetABook(id: string): Promise<Response>
-  GetAllBook(query?: Query, filter?: object): Promise<Response>
-  GetABookCharacter(id: string, query?: Query, filter?: object): Promise<Response>
-  GetAChapter(id: string): Promise<Response>
-  ListCharacters(query?: Query, filter?: object): Promise<Response>
-  GetACharacterQuote(id: string, query?: Query, filter?: object): Promise<Response>
-  GetACharacter(id: string): Promise<Response>
-  ListMovies(query?: Query, filter?: object): Promise<Response>
-  GetAMovieQuote(id: string, query?: Query, filter?: object): Promise<Response>
-  GetAMovie(id: string): Promise<Response>
+  GetAllBook(query?: Query): Promise<Response>
   GetAQuote(id: string): Promise<Response>
 }

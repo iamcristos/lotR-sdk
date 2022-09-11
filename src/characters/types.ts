@@ -1,3 +1,4 @@
+import { Query } from '../base/types'
 export interface Response {
   docs: Doc[]
   total: number
@@ -28,5 +29,11 @@ export enum Gender {
   Male = 'Male',
   Males = 'Males',
   MostLikelyMale = 'Most likely male',
-  NaN = 'NaN',
+}
+
+export interface ICharacter {
+  GetABookCharacter(id: string, query?: Query): Promise<Response>
+  ListCharacters(query?: Query): Promise<Response>
+  GetACharacterQuote(id: string, query?: Query): Promise<Response>
+  GetACharacter(id: string): Promise<Response>
 }

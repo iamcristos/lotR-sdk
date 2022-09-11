@@ -44,14 +44,20 @@ export abstract class Base {
   protected filters(filter: object): string {
     let enrichedFilter = ''
     for (const key in filter) {
-      enrichedFilter += `&${key}=${filter[key]}`
+      enrichedFilter += enrichedFilter ? `&${key}${filter[key]}` : `${key}${filter[key]}`
     }
     return enrichedFilter
   }
 
-  protected GetEndPointUrl(query?: Query, filter?: object): string {
-    const { limit, offset, page } = query || this.query
-    let endpointUrl = `limit=${limit}&offset=${offset}&page=${page}`
+  protected GetEndPointUrl(query?: Query): string {
+    const queryArray = ['limit', 'offset', 'page']
+    const { filter } = query || {}
+    let endpointUrl = ''
+    for (const key in query) {
+      if (queryArray.includes(key)) {
+        endpointUrl += endpointUrl ? `&${key}=${query[key]}` : `${key}=${query[key]}`
+      }
+    }
     if (filter) {
       endpointUrl += this.filters(filter)
     }
