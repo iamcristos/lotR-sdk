@@ -1,6 +1,6 @@
 {
   "name": "cristos-lotr-sdk",
-  "version": "1.0.1",
+  "version": "1.0.0.1",
   "description": "A simple SDK that helps developers consume lord of the rings API",
   "main": "dist/index.js",
   "module": "dist/index.m.js",
