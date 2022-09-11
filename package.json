@@ -1,0 +1,45 @@
+{
+  "name": "lord-rings-sdk",
+  "version": "1.0.0",
+  "description": "A simple SDK that helps developers consume lord of the rings API",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.js",
+    "default": "./dist/index.modern.js"
+  },
+  "scripts": {
+    "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap",
+    "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap",
+    "test": "echo \"Error: no test specified\" && jest --runInBand --detectOpenHandles --force-exit --colors --verbose --reporters=default --unhandled-rejections=strict"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "5",
+    "@typescript-eslint/parser": "5",
+    "@types/jest": "^28.1.4",
+    "@types/node": "^16.9.4",
+    "eslint": "8",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.1.0",
+    "microbundle": "0.15.0",
+    "jest": "^28.1.2",
+    "prettier": "^2.7.1",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.2.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3",
+     "@types/node-fetch": "^2.6.2"
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "^3.1.0",
+    "node-fetch": "^2.6.6"
+  },
+  "files": [
+    "dist"
+  ]
+}
