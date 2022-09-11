@@ -32,7 +32,7 @@ The complete installation instructions is right below.
 All you need to make an SDK installed is just run the following script in your command line:
 
 ```bash
-yarn i lord-rings-sdk
+yarn i cristos-lotr-sdk
 ```
 
 ## SDK Initialization
@@ -48,7 +48,7 @@ You have to import SDK to your application and provide following arguments to it
 Common JS SDK initialization example with setting cache reset to 10 seconds and enabling logger:
 
 ```javascript
-const SDK = require('lord-rings-sdk')
+const SDK = require('cristos-lotr-sdk')
 
 const sdk = new SDK({ apiKey: 'api key' })
 ```
@@ -58,7 +58,7 @@ const sdk = new SDK({ apiKey: 'api key' })
 ES Modules SDK initialization example without enabling it features:
 
 ```javascript
-import SDK from 'lord-rings-sdk'
+import SDK from 'cristos-lotr-sdk'
 
 const sdk = new SDK({ apiKey: 'api key' })
 ```

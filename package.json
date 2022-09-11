@@ -1,6 +1,6 @@
 {
-  "name": "lord-rings-sdk",
-  "version": "1.0.0",
+  "name": "cristos-lotr-sdk",
+  "version": "1.0.1",
   "description": "A simple SDK that helps developers consume lord of the rings API",
   "main": "dist/index.js",
   "module": "dist/index.m.js",
@@ -15,8 +15,7 @@
     "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap",
     "test": "echo \"Error: no test specified\" && jest --runInBand --detectOpenHandles --force-exit --colors --verbose --reporters=default --unhandled-rejections=strict"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Vincent Nmeregini",
   "license": "ISC",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5",
@@ -41,5 +40,10 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iamcristos/vincent-SDK"
+  },
+  "keywords": ["sdk", "lord-of-the-rings"]
 }
