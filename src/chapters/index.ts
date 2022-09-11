@@ -1,5 +1,5 @@
 import { Base } from '../base'
-import { Response } from '../base/types'
+import { Response } from './types'
 export class Chapter extends Base {
   GetAChapter(id: string): Promise<Response> {
     if (!this.apiKey) {

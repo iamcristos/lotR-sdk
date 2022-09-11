@@ -1,5 +1,6 @@
 import { Base } from '../base'
-import { Query, Response } from '../base/types'
+import { Query } from '../base/types'
+import { Response } from './types'
 export class Character extends Base {
   ListCharacters(query?: Query, filter?: object): Promise<Response> {
     if (!this.apiKey) {
